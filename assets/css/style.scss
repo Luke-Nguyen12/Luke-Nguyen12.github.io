@@ -1,0 +1,19 @@
+---
+---
+
+@import "{{ jekyll-theme-minimal }}";
+
+.button-link {
+  display: inline-block;
+  padding: 0.6em 1.2em;
+  background-color: #2e7d32;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.button-link:hover {
+  background-color: #1b5e20;
+}
