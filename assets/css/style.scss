@@ -3,10 +3,14 @@
 
 @import "{{ site.theme }}";
 
+body {
+  background-color: #F4E7E1;
+}
+
 .button-link {
   display: inline-block;
   padding: 0.6em 1.2em;
-  background-color: #EDE8D0;
+  background-color: #521C0D;
   color: white;
   text-decoration: none;
   border-radius: 8px;
@@ -15,5 +19,5 @@
 }
 
 .button-link:hover {
-  background-color: #EDE8D0;
+  background-color: #521C0D;
 }
