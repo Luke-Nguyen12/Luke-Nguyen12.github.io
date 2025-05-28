@@ -1,3 +1,8 @@
+---
+layout: default
+title: Luke Nguyen's Personal Portfolio
+---
+
 <!DOCTYPE html>
 
 <html lang = "en">
