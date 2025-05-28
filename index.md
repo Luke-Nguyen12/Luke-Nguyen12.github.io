@@ -10,8 +10,8 @@ title: Luke Nguyen's Personal Portfolio
     </head>
     <body>
         <h1> Hi, I am <br> <span style="color:#FF9B45; font-weight:bold; font-size: 40px;"> Luke. </span> </h1>
-    <p> Hi there! I am Luke, a Computer Engineering Student at the University of California, Santa Barbara. I have a specific interest in Machine Learning and AI technology however I am eager to learn anything inside my field
-        .Feel free to check out my projects and here is my <a href="https://www.linkedin.com/in/luke-anh-nguyen/" target="_blank" rel="noopener noreferrer"> Linkedin </a>
+    <p> Hi there! I am Luke, a Computer Engineering Student at the University of California, Santa Barbara. I have a specific interest in Machine Learning and AI technology however I am eager to learn anything inside my field. <br>
+        Feel free to check out my projects and here is my <a href="https://www.linkedin.com/in/luke-anh-nguyen/" target="_blank" rel="noopener noreferrer"> Linkedin </a>
     </p>
     <address> 
         Contact me at my email address here <a href= "mailto:lukenguyen@ucsb.edu"> lukenguyen@ucsb.edu </a>. <br>
