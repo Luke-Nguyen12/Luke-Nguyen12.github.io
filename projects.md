@@ -15,7 +15,5 @@ permalink: /projects/
     <p> This project was inspired by Spotify Wrapped and the various other Wrapped out there like Messages Wrapped, Reddit Wrapped, etc. This project takes in your Chrome browsing history and categorizes into your top 10 most searched queries, your first and last searched queries of the year.
     </p>
     </body>
-
+<a href="/" class="button-link"> Back to Home</a>
 </html>
-
-[back](./)
