@@ -1,8 +1,6 @@
 title: Luke Nguyen's Personal Portfolio
-logo: /assets/img/logo.png
+logo: /assets/img/PC210029.JPG
 description: UCSB Computer Engineering Student Portfolio
-show_downloads: true
-google_analytics:
 theme: jekyll-theme-minimal
 
 remote_theme: pages-themes/minimal@v0.2.0
