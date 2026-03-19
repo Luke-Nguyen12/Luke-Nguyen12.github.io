@@ -4,23 +4,11 @@ title: Luke Nguyen's Personal Portfolio
 ---
 
 <section class="section" id="about">
-  <div class="hero">
-    <div class="photo">
-      <img
-        src="{{ '/assets/img/PC210029.JPG' | relative_url }}"
-        alt="Photo of Luke Nguyen"
-        loading="eager"
-      />
-    </div>
-    <div>
-      <h2 class="section__title">About</h2>
-      <p class="card__body">{insert text}</p>
-      <div class="cta-row">
-        <a class="button-link button-link--primary" href="{{ '/projects/' | relative_url }}">View project archive</a>
-        <a class="button-link" href="mailto:lukenguyen@ucsb.edu">Email me</a>
-        <a class="button-link" href="https://www.linkedin.com/in/luke-anh-nguyen/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      </div>
-    </div>
+  <h2 class="section__title">About</h2>
+  <div class="about-wall">
+    <p>{insert text}</p>
+    <p>{insert text}</p>
+    <p>{insert text}</p>
   </div>
 </section>
 
@@ -140,7 +128,6 @@ title: Luke Nguyen's Personal Portfolio
       </ul>
     </article>
   </div>
-
   <div class="cta-row">
     <a class="button-link" href="{{ '/projects/' | relative_url }}">View full project archive</a>
   </div>
@@ -153,20 +140,5 @@ title: Luke Nguyen's Personal Portfolio
     <h3 class="card__title">University of California, Santa Barbara</h3>
     <p class="card__subtitle">B.S. Computer Engineering · {insert details}</p>
     <p class="card__body">{insert text}</p>
-  </article>
-</section>
-
-<section class="section" id="contact">
-  <h2 class="section__title">Contact</h2>
-  <article class="card">
-    <h3 class="card__title">Let’s build something.</h3>
-    <p class="card__body">
-      The fastest way to reach me is email.
-      <a class="link" href="mailto:lukenguyen@ucsb.edu">lukenguyen@ucsb.edu</a>
-    </p>
-    <div class="cta-row">
-      <a class="button-link button-link--primary" href="mailto:lukenguyen@ucsb.edu">Say hello</a>
-      <a class="button-link" href="https://www.linkedin.com/in/luke-anh-nguyen/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    </div>
   </article>
 </section>
