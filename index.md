@@ -3,21 +3,170 @@ layout: default
 title: Luke Nguyen's Personal Portfolio
 ---
 
-<html lang = "en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <h1> Hi, I am <br> <span style="color:#FF9B45; font-weight:bold; font-size: 40px;"> Luke. </span> </h1>
-    <p> Hi there! I am Luke, a Computer Engineering Student at the University of California, Santa Barbara. I have a specific interest in Machine Learning and AI technology however I am eager to learn anything inside my field. <br>
-        Feel free to check out my projects and here is my <a href="https://www.linkedin.com/in/luke-anh-nguyen/" target="_blank" rel="noopener noreferrer"> Linkedin </a>
-    </p>
-    <address> 
-        Contact me at my email address here <a href= "mailto:lukenguyen@ucsb.edu"> lukenguyen@ucsb.edu </a>. <br>
-        I look forward to hearing from you!
-    </address>
-    <a href="/projects/" class="button-link">View My Projects</a>
-    </body>
+<section class="section" id="about">
+  <div class="hero">
+    <div class="photo">
+      <img
+        src="{{ '/assets/img/PC210029.JPG' | relative_url }}"
+        alt="Photo of Luke Nguyen"
+        loading="eager"
+      />
+    </div>
+    <div>
+      <h2 class="section__title">About</h2>
+      <p class="card__body">{insert text}</p>
+      <div class="cta-row">
+        <a class="button-link button-link--primary" href="{{ '/projects/' | relative_url }}">View project archive</a>
+        <a class="button-link" href="mailto:lukenguyen@ucsb.edu">Email me</a>
+        <a class="button-link" href="https://www.linkedin.com/in/luke-anh-nguyen/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-</html>
+<section class="section" id="experience">
+  <h2 class="section__title">Experience</h2>
+  <div class="grid">
+    <article class="card">
+      <div class="card__meta">Jan 2025 — Current · Santa Barbara, CA</div>
+      <h3 class="card__title">Professional Event Chair · Sigma Eta Pi</h3>
+      <p class="card__body">
+        Led and organized professional networking events, workshops, and speaker sessions, increasing member engagement by 30% and fostering valuable industry connections.
+        Collaborated with executive board members to plan and execute monthly events, ensuring seamless coordination and enhancing the overall fraternity experience.
+      </p>
+      <ul class="tags" aria-label="Skills used">
+        <li class="tag">Leadership</li>
+        <li class="tag">Event Ops</li>
+        <li class="tag">Stakeholders</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <div class="card__meta">May 2025 — Current · Santa Barbara, CA</div>
+      <h3 class="card__title">External Vice President · Vietnamese Student Association at UCSB</h3>
+      <p class="card__body">
+        Managed a $20,000+ budget and coordinated logistics for a sold-out cultural showcase of 800+ attendees, overseeing a cross-functional team of 100+ performers and staff.
+        Led performances and engaged with 100+ participants, boosting team confidence and ensuring smooth event execution.
+        Fostered collaboration with mentors and faculty to create a positive, inclusive atmosphere for cultural events and general meetings.
+        Served as a liaison representing UCSB in the Union of Vietnamese Student Associations of Southern California.
+      </p>
+      <ul class="tags" aria-label="Skills used">
+        <li class="tag">Budgeting</li>
+        <li class="tag">Logistics</li>
+        <li class="tag">Public Speaking</li>
+        <li class="tag">Team Leadership</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <h2 class="section__title">Technical Projects</h2>
+  <div class="grid">
+    <article class="card">
+      <div class="card__meta">May 2025 — Jun 2025 · Santa Barbara, CA</div>
+      <h3 class="card__title">Browsing Wrapped</h3>
+      <p class="card__body">
+        Developed a full-stack web app using Flask and SQLite to visualize Google Chrome search trends with dynamic Chart.js analytics.
+        Designed a modern, card-based UI for first/last searches of the year with clean responsive HTML/CSS.
+        Reached 300+ users in one month and iterated from user feedback.
+      </p>
+      <ul class="tags" aria-label="Tech stack">
+        <li class="tag">Flask</li>
+        <li class="tag">SQLite</li>
+        <li class="tag">Chart.js</li>
+        <li class="tag">HTML/CSS</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <div class="card__meta">Jan 2026 · Santa Barbara, CA</div>
+      <h3 class="card__title">Automated Document Redaction</h3>
+      <p class="card__body">
+        Engineered a cloud-native platform using Node.js and AWS Lambda to detect and mask sensitive PII in uploaded documents.
+        Reduced processing time by 24% via asynchronous triggers and optimized regex patterns for PII detection.
+      </p>
+      <ul class="tags" aria-label="Tech stack">
+        <li class="tag">Node.js</li>
+        <li class="tag">AWS Lambda</li>
+        <li class="tag">Regex</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <div class="card__meta">May 2025 — Jun 2025 · Santa Barbara, CA</div>
+      <h3 class="card__title">AirPod Exercising Optimization</h3>
+      <p class="card__body">
+        Built a system using wearable IMU and heart-rate data from AirPods Pro (3rd gen) for real-time performance diagnostics and anomaly detection.
+        Developed an agentic AI in Python to parse health data and produce natural-language insights.
+        Engineered a C++ backend with memory-efficient data structures for real-time vector transforms and zero-leak high-frequency streaming.
+      </p>
+      <ul class="tags" aria-label="Tech stack">
+        <li class="tag">Python</li>
+        <li class="tag">C++</li>
+        <li class="tag">Time Series</li>
+        <li class="tag">Sensors</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <div class="card__meta">May 2025 — Jun 2025 · Santa Barbara, CA</div>
+      <h3 class="card__title">3D Perception &amp; LiDAR Mapping for Autonomous Systems</h3>
+      <p class="card__body">
+        Designed a spatial mapping pipeline to process high-density LiDAR point clouds for object segmentation and environment reconstruction.
+        Built Python tooling to filter raw LiDAR data, extract geometric features, and transform unstructured points into indexed 3D surfaces for AutoCAD modeling.
+        Implemented a hybrid storage strategy for multi-GB datasets using NAS for low-latency rendering and AWS S3 for cloud-based versions.
+      </p>
+      <ul class="tags" aria-label="Tech stack">
+        <li class="tag">Python</li>
+        <li class="tag">Computer Vision</li>
+        <li class="tag">LiDAR</li>
+        <li class="tag">AWS S3</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <div class="card__meta">Sep 2025 — Jan 2026 · Santa Barbara, CA</div>
+      <h3 class="card__title">Automated MOSFET Parameter Extraction</h3>
+      <p class="card__body">
+        Built a characterization test bench with programmable DC sweeps and high-precision current sensing to measure \(I_D\) across \(V_{GS}\) and \(V_{DS}\).
+        Developed a C++ data processing engine applying saturation/triode MOSFET models to extract threshold and conduction parameters from measured data.
+        Improved stability using source degeneration resistors to prevent thermal runaway during high-power sweeps and calibrated with lab instrumentation.
+      </p>
+      <ul class="tags" aria-label="Tech stack">
+        <li class="tag">C++</li>
+        <li class="tag">Hardware</li>
+        <li class="tag">Data Processing</li>
+      </ul>
+    </article>
+  </div>
+
+  <div class="cta-row">
+    <a class="button-link" href="{{ '/projects/' | relative_url }}">View full project archive</a>
+  </div>
+</section>
+
+<section class="section" id="education">
+  <h2 class="section__title">Education</h2>
+  <article class="card">
+    <div class="card__meta">{insert dates} · Santa Barbara, CA</div>
+    <h3 class="card__title">University of California, Santa Barbara</h3>
+    <p class="card__subtitle">B.S. Computer Engineering · {insert details}</p>
+    <p class="card__body">{insert text}</p>
+  </article>
+</section>
+
+<section class="section" id="contact">
+  <h2 class="section__title">Contact</h2>
+  <article class="card">
+    <h3 class="card__title">Let’s build something.</h3>
+    <p class="card__body">
+      The fastest way to reach me is email.
+      <a class="link" href="mailto:lukenguyen@ucsb.edu">lukenguyen@ucsb.edu</a>
+    </p>
+    <div class="cta-row">
+      <a class="button-link button-link--primary" href="mailto:lukenguyen@ucsb.edu">Say hello</a>
+      <a class="button-link" href="https://www.linkedin.com/in/luke-anh-nguyen/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </article>
+</section>
