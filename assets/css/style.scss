@@ -44,20 +44,22 @@ body {
   outline: none;
 }
 
-.site {
+body .site {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 40px 24px;
-  display: grid;
-  // Override any theme layout defaults (some themes set fixed widths).
-  grid-template-columns: 35% 65% !important;
+  // Less top padding so the first view isn't pushed down.
+  padding: 24px 24px;
+  // Strong overrides so the theme can't “undo” the grid.
+  display: grid !important;
+  grid-template-columns: minmax(320px, 35%) 1fr !important;
   gap: 40px;
 }
 
-.sidebar {
+body .sidebar {
   position: sticky;
-  top: 40px;
-  height: calc(100vh - 80px);
+  top: 24px;
+  height: calc(100vh - 48px);
+  width: 100% !important;
 }
 
 .sidebar__inner {
@@ -246,9 +248,10 @@ body {
   height: 18px;
 }
 
-.content {
+body .content {
   min-width: 0;
   padding-top: 6px;
+  width: 100% !important;
 }
 
 .section {
@@ -353,14 +356,13 @@ body {
   margin-bottom: 0;
 }
 .section#about {
-  // The page has 40px top padding on `.site`, so we need to compensate
-  // or the next section will peek into the first viewport.
-  min-height: calc(100vh - 40px);
+  // Compensate for `.site` top padding so the first section fills the viewport.
+  min-height: calc(100vh - 24px);
   display: flex;
   flex-direction: column;
   // Don't vertical-center; mimic Brittany's "text wall" starting near the top.
   justify-content: flex-start;
-  padding-top: 96px;
+  padding-top: 48px;
   padding-bottom: 24px;
 }
 
