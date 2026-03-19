@@ -154,7 +154,7 @@ body .sidebar {
 .nav__link:hover::before,
 .nav__link.is-active::before {
   width: 36px;
-  background: rgba(100, 255, 218, 0.7);
+  background: rgba(65, 169, 80, 0.85); // Matte Green
 }
 
 .social {
@@ -354,6 +354,8 @@ body .content {
   max-width: 62ch;
   color: rgba(226, 232, 240, 0.78);
   font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .about-wall p {
   margin: 0 0 16px;
@@ -366,9 +368,10 @@ body .content {
   min-height: calc(100vh - 24px);
   display: flex;
   flex-direction: column;
-  // Don't vertical-center; mimic Brittany's "text wall" starting near the top.
-  justify-content: flex-start;
-  padding-top: 48px;
+  // Center the wall-of-text on first load.
+  justify-content: center;
+  align-items: stretch;
+  padding-top: 24px;
   padding-bottom: 24px;
 }
 
@@ -400,23 +403,29 @@ body .content {
   justify-content: center;
   padding: 10px 12px;
   border-radius: 12px;
-  border: 1px solid rgba(148, 163, 184, 0.18);
-  background: rgba(15, 23, 42, 0.6);
-  color: rgba(226, 232, 240, 0.95);
+  border: 1px solid transparent;
+  background: transparent;
+  color: rgba(148, 163, 184, 0.92);
   text-decoration: none;
   font-weight: 700;
+  transition: transform 120ms ease, background 140ms ease, color 140ms ease, border-color 140ms ease;
 }
 .button-link:hover {
-  border-color: rgba(100, 255, 218, 0.28);
   color: white;
+  border-color: transparent;
+  background: rgba(255, 255, 255, 0.08);
+}
+.button-link:focus-visible {
+  outline: 2px solid rgba(65, 169, 80, 0.45); // Matte Green
+  outline-offset: 2px;
 }
 .button-link--primary {
-  border-color: rgba(100, 255, 218, 0.28);
-  background: rgba(100, 255, 218, 0.1);
-  color: rgba(100, 255, 218, 0.95);
+  border-color: transparent;
+  background: transparent;
+  color: rgba(148, 163, 184, 0.92);
 }
 .button-link--primary:hover {
-  background: rgba(100, 255, 218, 0.14);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .link {

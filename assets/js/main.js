@@ -29,6 +29,13 @@
       if (beforeHash && beforeHash !== window.location.pathname && beforeHash !== window.location.href) return;
 
       e.preventDefault();
+      // Special-case About to avoid tiny offset/peeking due to layout padding.
+      if (id === 'about') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        history.replaceState(null, '', '#about');
+        return;
+      }
+
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       history.replaceState(null, '', `#${id}`);
     });
@@ -72,7 +79,13 @@
 
   // Fallback: scrollspy based on section top offsets (works everywhere).
   const getActiveId = () => {
-    const y = window.scrollY + 120; // account for top padding
+    // If we're at the bottom, force-highlight the last section (e.g. Education).
+    const bottomSlack = 4;
+    if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - bottomSlack) {
+      return sections[sections.length - 1]?.id;
+    }
+
+    const y = window.scrollY + 140; // account for top padding / scroll target behavior
     let active = sections[0]?.id;
     for (const s of sections) {
       if (s.offsetTop <= y) active = s.id;
