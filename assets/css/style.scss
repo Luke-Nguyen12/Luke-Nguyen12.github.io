@@ -1,8 +1,6 @@
 ---
 ---
 
-@import "{{ site.theme }}";
-
 $bg: #0b1220;
 $panel: rgba(255, 255, 255, 0.03);
 $border: rgba(148, 163, 184, 0.2);
@@ -45,7 +43,8 @@ body {
 }
 
 body .site {
-  max-width: 1180px;
+  max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
   // Less top padding so the first view isn't pushed down.
   padding: 24px 24px;

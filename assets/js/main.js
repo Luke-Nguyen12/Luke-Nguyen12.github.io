@@ -46,7 +46,7 @@
     .map((id) => document.getElementById(id))
     .filter(Boolean);
 
-  if (!('IntersectionObserver' in window) || sections.length === 0) return;
+  if (sections.length === 0) return;
 
   const setActive = (id) => {
     for (const a of navLinks) {
@@ -55,17 +55,43 @@
     }
   };
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      const visible = entries
-        .filter((e) => e.isIntersecting)
-        .sort((a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0))[0];
-      if (visible?.target?.id) setActive(visible.target.id);
-    },
-    { rootMargin: '-20% 0px -70% 0px', threshold: [0.1, 0.2, 0.4, 0.6] }
-  );
+  // Primary: IntersectionObserver (cheap + smooth).
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => (a.boundingClientRect.top || 0) - (b.boundingClientRect.top || 0))[0];
+        if (visible?.target?.id) setActive(visible.target.id);
+      },
+      // More forgiving margins so the active state updates reliably with padding changes.
+      { rootMargin: '-10% 0px -60% 0px', threshold: [0.01, 0.1, 0.25] }
+    );
+    for (const s of sections) observer.observe(s);
+  }
 
-  for (const s of sections) observer.observe(s);
+  // Fallback: scrollspy based on section top offsets (works everywhere).
+  const getActiveId = () => {
+    const y = window.scrollY + 120; // account for top padding
+    let active = sections[0]?.id;
+    for (const s of sections) {
+      if (s.offsetTop <= y) active = s.id;
+    }
+    return active;
+  };
+
+  let raf = 0;
+  const onScroll = () => {
+    if (raf) return;
+    raf = window.requestAnimationFrame(() => {
+      raf = 0;
+      const id = getActiveId();
+      if (id) setActive(id);
+    });
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
 
   const copyButtons = Array.from(document.querySelectorAll('[data-copy]'));
   for (const btn of copyButtons) {
