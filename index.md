@@ -5,7 +5,7 @@ title: Luke Nguyen's Personal Portfolio
 
 <section class="section" id="about">
   <div class="about-wall">
-    <p>"I’m an electrical and computer engineer with a specialty in automated characterization and logic design. I enjoy working at the intersection of hardware constraints and software automation, where physical circuit precision meets robust, high-level data processing."</p>
+    <p>I’m an electrical and computer engineer with a specialty in automated characterization and logic design. I enjoy working at the intersection of hardware constraints and software automation, where physical circuit precision meets robust, high-level data processing."</p>
     <p>Currently, I’m an Operations Coordinator at the UCSB ITS Student Help Desk, where I work to maintain and evolve our campus-wide digital support infrastructure. In this role, I help efforts across account security, MFA tooling, and identity patterns, partnering closely with university departments and senior staff to ensure seamless digital access is a core part of the student and faculty experience</p>
     <p>Also on campus, I am the External Vice President for the Vietnamese Student Association, where I act as the primary liaison between our organization and the Union of Vietnamese Student Associations of Southern California, spearheading external partnerships and representing the interests of the diverse student body at SB to broader regional schools.</p>
     <p>When I'm not at school, you can find me rock climbing or playing volleyball, cooking my favorite meals for the gym grind or preparing for my next DJ set. </p>

@@ -49,7 +49,8 @@ body {
   margin: 0 auto;
   padding: 40px 24px;
   display: grid;
-  grid-template-columns: 35% 65%;
+  // Override any theme layout defaults (some themes set fixed widths).
+  grid-template-columns: 35% 65% !important;
   gap: 40px;
 }
 
@@ -83,13 +84,15 @@ body {
 
 .identity__role {
   margin: 10px 0 0;
-  color: $muted;
-  font-weight: 500;
+  font-size: 18px;
+  color: rgba(226, 232, 240, 0.78);
+  font-weight: 600;
 }
 
 .identity__blurb {
   margin: 14px 0 0;
-  color: $muted;
+  font-size: 14px;
+  color: rgba(148, 163, 184, 0.86);
   max-width: 42ch;
 }
 
@@ -275,7 +278,8 @@ body {
 }
 .card:hover {
   transform: translateY(-1px);
-  border-color: rgba(100, 255, 218, 0.32);
+  // No green outline; keep hover purely as a panel reveal.
+  border-color: transparent;
   background: rgba(255, 255, 255, 0.08);
 }
 
@@ -318,9 +322,9 @@ body {
 .tag {
   padding: 6px 10px;
   border-radius: 999px;
-  background: rgba(100, 255, 218, 0.08);
-  border: 1px solid rgba(100, 255, 218, 0.18);
-  color: rgba(100, 255, 218, 0.9);
+  background: rgba(135, 214, 154, 0.14); // Charming Green
+  border: 1px solid rgba(65, 169, 80, 0.35); // Matte Green
+  color: rgba(135, 214, 154, 0.95);
   font-size: 12px;
   font-weight: 700;
 }
@@ -354,7 +358,10 @@ body {
   min-height: calc(100vh - 40px);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // Don't vertical-center; mimic Brittany's "text wall" starting near the top.
+  justify-content: flex-start;
+  padding-top: 96px;
+  padding-bottom: 24px;
 }
 
 .photo {

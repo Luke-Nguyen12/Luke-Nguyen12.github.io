@@ -89,7 +89,7 @@
           btn.setAttribute('aria-label', 'Copy failed');
           btn.setAttribute('title', 'Copy failed');
         }
-        window.setTimeout(reset, 1000);
+        window.setTimeout(reset, 450);
       };
 
       const fallbackCopy = () => {
