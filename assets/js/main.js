@@ -1,4 +1,17 @@
 (() => {
+  try {
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  } catch {
+    // ignore
+  }
+
+  // Ensure we land at the true top on first load (unless deep-linking to a hash).
+  const snapToTopIfNeeded = () => {
+    if (!window.location.hash) window.scrollTo(0, 0);
+  };
+  snapToTopIfNeeded();
+  window.addEventListener('pageshow', snapToTopIfNeeded);
+
   const links = Array.from(document.querySelectorAll('a[href*="#"]'));
   for (const link of links) {
     link.addEventListener('click', (e) => {
@@ -59,28 +72,56 @@
     btn.addEventListener('click', async () => {
       const text = btn.getAttribute('data-copy') || '';
       if (!text) return;
+      const reset = () => {
+        btn.classList.remove('is-copied', 'is-error');
+        btn.setAttribute('aria-label', 'Copy email');
+        btn.setAttribute('title', 'Copy email');
+      };
+
+      const showState = (state) => {
+        reset();
+        if (state === 'copied') {
+          btn.classList.add('is-copied');
+          btn.setAttribute('aria-label', 'Copied');
+          btn.setAttribute('title', 'Copied');
+        } else {
+          btn.classList.add('is-error');
+          btn.setAttribute('aria-label', 'Copy failed');
+          btn.setAttribute('title', 'Copy failed');
+        }
+        window.setTimeout(reset, 1000);
+      };
+
+      const fallbackCopy = () => {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.setAttribute('readonly', 'true');
+        textarea.style.position = 'fixed';
+        textarea.style.left = '-9999px';
+        textarea.style.top = '0';
+        document.body.appendChild(textarea);
+        textarea.focus();
+        textarea.select();
+        const ok = document.execCommand('copy');
+        document.body.removeChild(textarea);
+        return ok;
+      };
+
       try {
         if (navigator.clipboard?.writeText) {
           await navigator.clipboard.writeText(text);
-        } else {
-          const input = document.createElement('input');
-          input.value = text;
-          input.setAttribute('readonly', 'true');
-          input.style.position = 'absolute';
-          input.style.left = '-9999px';
-          document.body.appendChild(input);
-          input.select();
-          document.execCommand('copy');
-          document.body.removeChild(input);
+          showState('copied');
+          return;
         }
-        btn.classList.add('is-copied');
-        btn.setAttribute('aria-label', 'Copied');
-        window.setTimeout(() => {
-          btn.classList.remove('is-copied');
-          btn.setAttribute('aria-label', 'Copy email');
-        }, 900);
       } catch {
-        // Ignore copy failures; mailto link is still present.
+        // fall through to fallback
+      }
+
+      try {
+        const ok = fallbackCopy();
+        showState(ok ? 'copied' : 'error');
+      } catch {
+        showState('error');
       }
     });
   }

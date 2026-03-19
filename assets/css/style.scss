@@ -96,6 +96,7 @@ body {
 .sidebar-photo {
   width: 210px;
   height: 210px;
+  flex: 0 0 auto;
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid rgba(148, 163, 184, 0.18);
@@ -193,6 +194,10 @@ body {
   justify-content: center;
   color: rgba(226, 232, 240, 0.85);
   cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 0;
+  line-height: 1;
 }
 .copy-button:hover {
   border-color: rgba(100, 255, 218, 0.28);
@@ -210,6 +215,12 @@ body {
   border-color: rgba(100, 255, 218, 0.35);
   background: rgba(100, 255, 218, 0.12);
   color: rgba(100, 255, 218, 0.95);
+}
+
+.copy-button.is-error {
+  border-color: rgba(248, 113, 113, 0.35);
+  background: rgba(248, 113, 113, 0.12);
+  color: rgba(248, 113, 113, 0.95);
 }
 .icon-link {
   width: 40px;
@@ -256,16 +267,16 @@ body {
 
 .card {
   position: relative;
-  border: 1px solid rgba(148, 163, 184, 0.12);
-  background: $panel;
+  border: 1px solid transparent;
+  background: transparent;
   border-radius: 14px;
   padding: 16px 16px;
-  transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+  transition: transform 120ms ease, border-color 140ms ease, background 140ms ease;
 }
 .card:hover {
   transform: translateY(-1px);
-  border-color: rgba(100, 255, 218, 0.25);
-  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(100, 255, 218, 0.32);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .card__meta {
@@ -282,6 +293,7 @@ body {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: -0.01em;
+  color: rgba(226, 232, 240, 0.96);
 }
 
 .card__subtitle {
@@ -292,7 +304,7 @@ body {
 
 .card__body {
   margin: 10px 0 0;
-  color: rgba(226, 232, 240, 0.86);
+  color: rgba(148, 163, 184, 0.92);
 }
 
 .tags {
@@ -337,7 +349,9 @@ body {
   margin-bottom: 0;
 }
 .section#about {
-  min-height: calc(100vh - 80px);
+  // The page has 40px top padding on `.site`, so we need to compensate
+  // or the next section will peek into the first viewport.
+  min-height: calc(100vh - 40px);
   display: flex;
   flex-direction: column;
   justify-content: center;
