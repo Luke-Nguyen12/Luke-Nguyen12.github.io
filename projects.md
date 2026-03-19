@@ -7,7 +7,7 @@ permalink: /projects/
 <section class="section">
   <h2 class="section__title">Project Archive</h2>
   <p class="card__body">
-    A longer list of projects and experiments. (We can expand this page into a full archive with filters later.)
+    Full list of projects
   </p>
 
   <div class="grid" style="margin-top: 14px;">
@@ -15,7 +15,7 @@ permalink: /projects/
       <div class="card__meta">May 2025 — Jun 2025</div>
       <h3 class="card__title">Browsing Wrapped</h3>
       <p class="card__body">
-        Inspired by Spotify Wrapped—visualizes Chrome search history into trends, top queries, and first/last searches of the year.
+        Inspired by Spotify Wrapped; visualizes Chrome search history into trends, top queries, and first/last searches of the year.
       </p>
       <ul class="tags" aria-label="Tech stack">
         <li class="tag">Flask</li>
@@ -72,6 +72,20 @@ permalink: /projects/
         <li class="tag">Hardware</li>
       </ul>
     </article>
+
+    <article class="card">
+      <div class="card__meta">November 2024 — December 2024</div>
+      <h3 class="card__title">Arduino Blackjack</h3>
+      <p class="card__body">
+        Recreation of the game Blackjack using an Arduino Uno and a 2x12 LCD display with 3 input buttons
+      </p>
+      <ul class="tags" aria-label="Tech stack">
+        <li class="tag">Arduino</li>
+        <li class="tag">Breadboard</li>
+        <li class="tag">Circuit Design</li>
+      </ul>
+    </article>
+
   </div>
 
   <div class="cta-row">

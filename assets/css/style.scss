@@ -13,6 +13,12 @@ html {
   scroll-behavior: smooth;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   background: radial-gradient(1200px 800px at 10% -10%, rgba(100, 255, 218, 0.08), transparent 55%),
@@ -21,6 +27,7 @@ body {
   color: $text;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 .skip-link {
@@ -44,13 +51,13 @@ body {
 
 body .site {
   max-width: 1400px;
-  width: 100%;
+  width: min(1400px, 100%);
   margin: 0 auto;
   // Less top padding so the first view isn't pushed down.
   padding: 24px 24px;
   // Strong overrides so the theme can't “undo” the grid.
   display: grid !important;
-  grid-template-columns: minmax(320px, 35%) 1fr !important;
+  grid-template-columns: minmax(360px, 42.5%) 1fr !important;
   gap: 40px;
 }
 
@@ -422,16 +429,31 @@ body .content {
 }
 
 @media (max-width: 960px) {
-  .site {
-    grid-template-columns: 1fr;
-    gap: 18px;
-    padding: 22px 18px;
+  body .site {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 18px 16px !important;
   }
-  .sidebar {
-    position: static;
-    height: auto;
+
+  body .sidebar {
+    position: static !important;
+    top: auto !important;
+    height: auto !important;
+    width: 100% !important;
   }
+
+  body .content {
+    width: 100% !important;
+    padding-top: 0 !important;
+  }
+
   .sidebar__inner {
     padding: 0;
+    gap: 18px;
+  }
+
+  .nav__list {
+    padding-top: 10px;
   }
 }
