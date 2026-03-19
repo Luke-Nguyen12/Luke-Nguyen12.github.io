@@ -40,12 +40,21 @@
               <li class="nav__item"><a class="nav__link" href="{{ '/' | relative_url }}#experience">Experience</a></li>
               <li class="nav__item"><a class="nav__link" href="{{ '/' | relative_url }}#projects">Projects</a></li>
               <li class="nav__item"><a class="nav__link" href="{{ '/' | relative_url }}#education">Education</a></li>
-              <li class="nav__item"><a class="nav__link" href="{{ '/projects/' | relative_url }}">Project Archive</a></li>
             </ul>
           </nav>
 
           <div class="contact">
-            <a class="contact__email" href="mailto:lukenguyen@ucsb.edu">lukenguyen@ucsb.edu</a>
+            <div class="email-row">
+              <a class="contact__email" href="mailto:lukenguyen@ucsb.edu">lukenguyen@ucsb.edu</a>
+              <button class="copy-button" type="button" data-copy="lukenguyen@ucsb.edu" aria-label="Copy email" title="Copy email">
+                <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M16 1H6a2 2 0 0 0-2 2v12h2V3h10V1Zm3 4H10a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 16H10V7h9v14Z"
+                  />
+                </svg>
+              </button>
+            </div>
             <div class="icon-links" aria-label="Social links">
               <a
                 class="icon-link"

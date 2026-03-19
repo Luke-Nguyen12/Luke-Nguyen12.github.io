@@ -53,5 +53,36 @@
   );
 
   for (const s of sections) observer.observe(s);
+
+  const copyButtons = Array.from(document.querySelectorAll('[data-copy]'));
+  for (const btn of copyButtons) {
+    btn.addEventListener('click', async () => {
+      const text = btn.getAttribute('data-copy') || '';
+      if (!text) return;
+      try {
+        if (navigator.clipboard?.writeText) {
+          await navigator.clipboard.writeText(text);
+        } else {
+          const input = document.createElement('input');
+          input.value = text;
+          input.setAttribute('readonly', 'true');
+          input.style.position = 'absolute';
+          input.style.left = '-9999px';
+          document.body.appendChild(input);
+          input.select();
+          document.execCommand('copy');
+          document.body.removeChild(input);
+        }
+        btn.classList.add('is-copied');
+        btn.setAttribute('aria-label', 'Copied');
+        window.setTimeout(() => {
+          btn.classList.remove('is-copied');
+          btn.setAttribute('aria-label', 'Copy email');
+        }, 900);
+      } catch {
+        // Ignore copy failures; mailto link is still present.
+      }
+    });
+  }
 })();
 
